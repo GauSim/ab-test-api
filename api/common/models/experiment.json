@@ -1,0 +1,37 @@
+{
+  "name": "Experiment",
+  "plural": "Experiments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": "true"
+    },
+    "matcher": {
+      "type": "string",
+      "required": "true"
+    },
+    "created": {
+      "type": "date",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "variations": {
+      "type": "hasMany",
+      "model": "Variation",
+      "foreignKey": "experimentId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

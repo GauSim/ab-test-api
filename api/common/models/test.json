@@ -1,0 +1,21 @@
+{
+  "name": "Test",
+  "plural": "Tests",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "activeExperiments": {
+      "type": [
+        "object"
+      ],
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

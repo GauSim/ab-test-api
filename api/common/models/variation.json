@@ -1,0 +1,23 @@
+{
+  "name": "Variation",
+  "plural": "Variations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "viewCount": {
+      "type": "number",
+      "required": true
+    },
+    "goalCount": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

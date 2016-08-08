@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<button (click)="simulate()" class="btn btn-primary">  test one </button>
+<button (click)="toggleSimulation()" class="btn btn-primary">
+  <span *ngIf="intervalHandlerId">stop</span>
+  <span *ngIf="!intervalHandlerId">start</span>
+   simulation
+</button>
+<h1> completedSimulations: {{ completedSimulations }}</h1>
+<ul class="list-group">
+  <li *ngFor="let exp of experiments; let i = index" class="list-group-item">
+    {{ exp.name }}
+    <br/>totalCount:{{ exp.totalCount}}
+    <div class="row">
+      <div class="col-sm-2">
+        <div>vario id</div>
+        <div>views</div>
+        <div>goal reached</div>
+        <div>cvr</div>
+      </div>
+      <div class="col-sm-1" *ngFor="let variation of exp.variations | orderby:'!cvr_for_sort'">
+        <div>{{ variation.id }}</div>
+        <div>{{ variation.viewCount }}</div>
+        <div>{{ variation.goalCount }}</div>
+        <div>{{ variation.cvr }} %</div>
+      </div>
+    </div>
+  </li>
+</ul>

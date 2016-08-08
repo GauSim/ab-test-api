@@ -32,6 +32,7 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'underscore',
 
   // App specific barrels.
   'app',
@@ -44,6 +45,8 @@ barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
 
+cliSystemConfigPackages['underscore'].main = 'underscore';
+
 /** Type declaration for ambient System. */
 declare var System: any;
 
@@ -52,6 +55,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'underscore': 'vendor/underscore',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
